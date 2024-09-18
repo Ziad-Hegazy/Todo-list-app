@@ -3,7 +3,6 @@ import 'package:Todo_list_app/styles/font.dart';
 import 'package:Todo_list_app/widgets/task_item.dart';
 import 'package:flutter/material.dart';
 import '/models/todo.dart';
-import '/utils/app_styles.dart';
 
 class TodoItemWidget extends StatefulWidget {
   const TodoItemWidget({
@@ -62,12 +61,10 @@ class _TodoItemWidgetState extends State<TodoItemWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(todo.dateTime.timeOnly(),
-                style: todo.isCompleted
-                    ? AppTextStyles.completedTodoTextStyle
-                    : AppTextStyles.todoTextStyle),
+                style: AppTextStyles.todo),
             Text(
               completed(),
-              style: AppTextStyles.small.copyWith(
+              style: AppTextStyles.counter.copyWith(
                   color: todo.countCompleted() == todo.tasks.length
                       ? Colors.greenAccent
                       : Colors.amber),

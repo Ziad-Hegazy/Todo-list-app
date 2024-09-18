@@ -121,7 +121,7 @@ class AppTheme {
     //minTileHeight: 0,
     //minVerticalPadding: 0,
     visualDensity: VisualDensity(vertical: -4),
-    titleTextStyle: AppTextStyles.mainText,
+    titleTextStyle: AppTextStyles.task,
     contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0),
   );
 

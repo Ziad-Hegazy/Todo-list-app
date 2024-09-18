@@ -1,8 +1,7 @@
-import 'package:Todo_list_app/extensions/date.dart';
+import 'package:Todo_list_app/styles/font.dart';
 import 'package:flutter/material.dart';
-import '/models/todo.dart';
 import '/models/task.dart';
-import '/utils/app_styles.dart';
+//import '/utils/app_styles.dart';
 
 class TaskItem extends StatefulWidget {
   const TaskItem({
@@ -57,8 +56,8 @@ class _TaskItemState extends State<TaskItem> {
             ),
             Text(task.description,
                 style: task.isCompleted
-                    ? AppStyles.completedTodoTextStyle
-                    : AppStyles.todoTextStyle),
+                    ? AppTextStyles.completedTask
+                    : AppTextStyles.task),
           ]),
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -66,7 +65,7 @@ class _TaskItemState extends State<TaskItem> {
               IconButton(
                   icon: const Icon(
                     Icons.edit,
-                    color: AppStyles.secondaryColor,
+                    color: Colors.orange,
                   ),
                   iconSize: 20,
                   onPressed: () {
@@ -107,10 +106,11 @@ class _TaskItemState extends State<TaskItem> {
                           id: task.id,
                           description: descriptionController.text,
                           isCompleted: task.isCompleted);
+                      onUpdate(updatedTask);
                       setState(() {
                         onUpdate(updatedTask);
                       });
-
+                      onUpdate(updatedTask);
                       Navigator.pop(context);
                     },
                     child: const Text("Update"))

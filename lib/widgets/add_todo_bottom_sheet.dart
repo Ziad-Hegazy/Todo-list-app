@@ -17,7 +17,6 @@ class AddTodoBottomSheet extends StatefulWidget {
 }
 
 class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
-  final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   _AddTodoBottomSheetState({required this.dateTime});
   DateTime? dateTime;
@@ -53,7 +52,7 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
             children: [
               Text(
                 'Time',
-                style: AppTextStyles.sheetTextButton,
+                style: AppTextStyles.sheetSubtitles,
               ),
               SizedBox(width: 15),
               TextButton(
@@ -114,7 +113,7 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
                     return Text(
                       task.description,
                       style:
-                          AppTextStyles.mainText.copyWith(color: AppColors.black),
+                          AppTextStyles.sheetTasks,
                     );
                   }),
             ),

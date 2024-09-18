@@ -3,14 +3,12 @@ import 'package:Todo_list_app/styles/colors.dart';
 
 import '../styles/font.dart';
 
-import '../utils/app_styles.dart';
 import '../widgets/todo_item_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../controllers/todo_controller.dart';
 import '../widgets/add_todo_bottom_sheet.dart';
 import 'package:Todo_list_app/extensions/date.dart';
-import 'package:intl/intl.dart';
 
 class TodoScreen extends StatefulWidget {
   const TodoScreen({super.key});
@@ -143,7 +141,7 @@ class _TodoScreenState extends State<TodoScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.add,size: 35,),
+                  Icon(Icons.add,size: 35,color: AppColors.white,),
                   const Text(
                     'Add task',
                   ),
