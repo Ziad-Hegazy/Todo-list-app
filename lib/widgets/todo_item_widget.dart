@@ -1,8 +1,8 @@
-import 'package:Todo_list_app/extensions/date.dart';
-import 'package:Todo_list_app/styles/font.dart';
-import 'package:Todo_list_app/widgets/task_item.dart';
+import '../extensions/date.dart';
+import '../styles/font.dart';
+import '../widgets/task_item.dart';
 import 'package:flutter/material.dart';
-import 'package:Todo_list_app/models/todo.dart';
+import '../models/todo.dart';
 
 class TodoItemWidget extends StatefulWidget {
   const TodoItemWidget({

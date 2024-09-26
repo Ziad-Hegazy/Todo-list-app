@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Todo_list_app/styles/theme.dart';
-import 'package:Todo_list_app/views/todo_screen.dart';
+import '../styles/theme.dart';
+import '../views/todo_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());

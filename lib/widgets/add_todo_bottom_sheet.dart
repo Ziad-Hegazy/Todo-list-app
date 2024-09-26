@@ -1,10 +1,10 @@
-import 'package:Todo_list_app/extensions/date.dart';
-import 'package:Todo_list_app/models/task.dart';
-import 'package:Todo_list_app/styles/colors.dart';
-import 'package:Todo_list_app/styles/font.dart';
+import '../extensions/date.dart';
+import '../models/task.dart';
+import '../styles/colors.dart';
+import '../styles/font.dart';
 import 'package:flutter/material.dart';
 
-import 'package:Todo_list_app/models/todo.dart';
+import '../models/todo.dart';
 
 class AddTodoBottomSheet extends StatefulWidget {
   final Function(Todo) onAdd;

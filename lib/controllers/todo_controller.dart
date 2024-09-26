@@ -1,6 +1,6 @@
-import 'package:Todo_list_app/extensions/date.dart';
+import '../extensions/date.dart';
 
-import 'package:Todo_list_app/models/todo.dart';
+import '../models/todo.dart';
 
 class TodoController {
   List<Todo> todos = [];

@@ -1,14 +1,14 @@
-import 'package:Todo_list_app/models/todo.dart';
-import 'package:Todo_list_app/styles/colors.dart';
+import '../models/todo.dart';
+import '../styles/colors.dart';
 
-import 'package:Todo_list_app/styles/font.dart';
+import '../styles/font.dart';
 
-import 'package:Todo_list_app/widgets/todo_item_widget.dart';
+import '../widgets/todo_item_widget.dart';
 import 'package:flutter/material.dart';
 
-import 'package:Todo_list_app/controllers/todo_controller.dart';
-import 'package:Todo_list_app/widgets/add_todo_bottom_sheet.dart';
-import 'package:Todo_list_app/extensions/date.dart';
+import '../controllers/todo_controller.dart';
+import '../widgets/add_todo_bottom_sheet.dart';
+import '../extensions/date.dart';
 
 class TodoScreen extends StatefulWidget {
   const TodoScreen({super.key});
