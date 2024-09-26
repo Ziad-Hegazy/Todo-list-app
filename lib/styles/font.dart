@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles/colors.dart';
+import 'package:Todo_list_app/styles/colors.dart';
 
 class AppTextStyles {
   static TextStyle title = TextStyle(
@@ -15,7 +15,7 @@ class AppTextStyles {
     fontFamily: 'SegoeUI',
     fontVariations: [FontVariation('wght', 700)],
   );
-  
+
   static TextStyle todo = TextStyle(
     color: AppColors.black,
     fontSize: 22,
@@ -32,7 +32,7 @@ class AppTextStyles {
   static const TextStyle completedTask = TextStyle(
       fontSize: 18,
       fontFamily: 'SegoeUI',
-    fontVariations: [FontVariation('wght', 600)],
+      fontVariations: [FontVariation('wght', 600)],
       decoration: TextDecoration.lineThrough,
       color: Colors.grey);
 
@@ -65,5 +65,4 @@ class AppTextStyles {
     fontSize: 18,
     color: appScheme.onSurface,
   );
-
 }

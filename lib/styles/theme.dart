@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import '../styles/colors.dart';
-import '../styles/font.dart';
+import 'package:Todo_list_app/styles/colors.dart';
+import 'package:Todo_list_app/styles/font.dart';
 
 class AppTheme {
   static ThemeData main = ThemeData(

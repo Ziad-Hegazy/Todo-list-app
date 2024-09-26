@@ -1,15 +1,15 @@
 import 'package:Todo_list_app/extensions/date.dart';
 
-import '../models/todo.dart';
+import 'package:Todo_list_app/models/todo.dart';
 
 class TodoController {
   List<Todo> todos = [];
 
-  List<Todo> filteredTodos(DateTime dateTime){
+  List<Todo> filteredTodos(DateTime dateTime) {
     dateTime.dateOnly();
-    return todos.where((t)=>t.dateTime.dateOnly()==dateTime).toList();
+    return todos.where((t) => t.dateTime.dateOnly() == dateTime).toList();
   }
-  
+
   void addTodo(Todo todo) {
     todos.add(todo);
   }

@@ -4,7 +4,7 @@ import 'package:Todo_list_app/styles/colors.dart';
 import 'package:Todo_list_app/styles/font.dart';
 import 'package:flutter/material.dart';
 
-import '../models/todo.dart';
+import 'package:Todo_list_app/models/todo.dart';
 
 class AddTodoBottomSheet extends StatefulWidget {
   final Function(Todo) onAdd;
@@ -101,7 +101,9 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
           SingleChildScrollView(
             child: Container(
               //padding: EdgeInsets.only(left:35,right:35,bottom: MediaQuery.of(context).viewInsets.bottom),
-              constraints: BoxConstraints(maxHeight: 193,),
+              constraints: BoxConstraints(
+                maxHeight: 193,
+              ),
               child: ListView.builder(
                   //reverse: true,
                   //padding: EdgeInsets.only(left:35,right:35,bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -112,8 +114,7 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
                     final task = tasks[index];
                     return Text(
                       task.description,
-                      style:
-                          AppTextStyles.sheetTasks,
+                      style: AppTextStyles.sheetTasks,
                     );
                   }),
             ),

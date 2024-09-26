@@ -1,7 +1,6 @@
 import 'package:Todo_list_app/styles/font.dart';
 import 'package:flutter/material.dart';
-import '/models/task.dart';
-//import '/utils/app_styles.dart';
+import 'package:Todo_list_app/models/task.dart';
 
 class TaskItem extends StatefulWidget {
   const TaskItem({

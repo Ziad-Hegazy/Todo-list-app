@@ -2,7 +2,7 @@ import 'package:Todo_list_app/extensions/date.dart';
 import 'package:Todo_list_app/styles/font.dart';
 import 'package:Todo_list_app/widgets/task_item.dart';
 import 'package:flutter/material.dart';
-import '/models/todo.dart';
+import 'package:Todo_list_app/models/todo.dart';
 
 class TodoItemWidget extends StatefulWidget {
   const TodoItemWidget({
@@ -11,8 +11,8 @@ class TodoItemWidget extends StatefulWidget {
     required this.onDelete,
     required this.onToggleCompleted,
     required this.onUpdate,
-  }):super(key: key);
-  
+  }) : super(key: key);
+
   final Todo todo;
   final VoidCallback onDelete;
   final VoidCallback onToggleCompleted;
@@ -60,8 +60,7 @@ class _TodoItemWidgetState extends State<TodoItemWidget> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(todo.dateTime.timeOnly(),
-                style: AppTextStyles.todo),
+            Text(todo.dateTime.timeOnly(), style: AppTextStyles.todo),
             Text(
               completed(),
               style: AppTextStyles.counter.copyWith(

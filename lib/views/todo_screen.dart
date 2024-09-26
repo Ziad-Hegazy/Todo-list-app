@@ -1,13 +1,13 @@
 import 'package:Todo_list_app/models/todo.dart';
 import 'package:Todo_list_app/styles/colors.dart';
 
-import '../styles/font.dart';
+import 'package:Todo_list_app/styles/font.dart';
 
-import '../widgets/todo_item_widget.dart';
+import 'package:Todo_list_app/widgets/todo_item_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../controllers/todo_controller.dart';
-import '../widgets/add_todo_bottom_sheet.dart';
+import 'package:Todo_list_app/controllers/todo_controller.dart';
+import 'package:Todo_list_app/widgets/add_todo_bottom_sheet.dart';
 import 'package:Todo_list_app/extensions/date.dart';
 
 class TodoScreen extends StatefulWidget {
@@ -16,9 +16,10 @@ class TodoScreen extends StatefulWidget {
   @override
   State<TodoScreen> createState() => _TodoScreenState();
 }
+
 class _TodoScreenState extends State<TodoScreen> {
   TodoController _todoController = TodoController();
-  List <Todo> todosFiltered=[];
+  List<Todo> todosFiltered = [];
   DateTime? _date = DateTime.now().dateOnly();
 
   String title() {
@@ -34,10 +35,11 @@ class _TodoScreenState extends State<TodoScreen> {
   }
 
   String subtitle() => _date!.toFormattedString();
-  
-  void filterTodos(){
-    todosFiltered=List.from(_todoController.filteredTodos(_date!));
+
+  void filterTodos() {
+    todosFiltered = List.from(_todoController.filteredTodos(_date!));
   }
+
   void _selectDate() async {
     _date = await showDatePicker(
           context: context,
@@ -48,34 +50,34 @@ class _TodoScreenState extends State<TodoScreen> {
         _date;
     _date = _date!.dateOnly();
     filterTodos();
-    setState(() {
-    });
+    setState(() {});
   }
 
-  Widget todoListView(){
+  Widget todoListView() {
     return ListView.builder(
-                itemCount: todosFiltered.length,
-                itemBuilder: (context, index) {
-                  final todo = todosFiltered[index];
-                  return TodoItemWidget(
-                    key: ValueKey(todo.id),
-                    todo: todo,
-                    onDelete: () {
-                      _todoController.deleteTodo(todo);
-                      setState(() {});
-                    },
-                    onToggleCompleted: () {
-                      _todoController.toggleComplete(todo);
-                      setState(() {});
-                    },
-                    onUpdate: (updatedTodo) {
-                      _todoController.updateTodo(updatedTodo);
-                      setState(() {});
-                    },
-                  );
-                },
-              );
+      itemCount: todosFiltered.length,
+      itemBuilder: (context, index) {
+        final todo = todosFiltered[index];
+        return TodoItemWidget(
+          key: ValueKey(todo.id),
+          todo: todo,
+          onDelete: () {
+            _todoController.deleteTodo(todo);
+            setState(() {});
+          },
+          onToggleCompleted: () {
+            _todoController.toggleComplete(todo);
+            setState(() {});
+          },
+          onUpdate: (updatedTodo) {
+            _todoController.updateTodo(updatedTodo);
+            setState(() {});
+          },
+        );
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     //todosFiltered=_todoController.filteredTodos(_date!);
@@ -99,9 +101,7 @@ class _TodoScreenState extends State<TodoScreen> {
                 IconButton(
                   onPressed: () {
                     _selectDate();
-                    setState(() {
-                      
-                    });
+                    setState(() {});
                   },
                   icon: Icon(Icons.calendar_month),
                   color: AppColors.lightBlack,
@@ -141,7 +141,11 @@ class _TodoScreenState extends State<TodoScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.add,size: 35,color: AppColors.white,),
+                  Icon(
+                    Icons.add,
+                    size: 35,
+                    color: AppColors.white,
+                  ),
                   const Text(
                     'Add task',
                   ),
