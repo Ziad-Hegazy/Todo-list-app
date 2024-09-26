@@ -25,7 +25,7 @@ class TaskItem extends StatefulWidget {
 }
 
 class _TaskItemState extends State<TaskItem> {
-  final Task task;
+  Task task;
   final VoidCallback onDelete;
   final VoidCallback onToggleCompleted;
   final Function(Task) onUpdate;
@@ -68,7 +68,8 @@ class _TaskItemState extends State<TaskItem> {
                   ),
                   iconSize: 20,
                   onPressed: () {
-                    _showEditTaskDialog(context, task);
+                    _showEditTaskDialog(context);
+                    setState(() {});
                   }),
               IconButton(
                   onPressed: onDelete,
@@ -81,11 +82,11 @@ class _TaskItemState extends State<TaskItem> {
     );
   }
 
-  void _showEditTaskDialog(BuildContext context, Task task) {
+  Future<void> _showEditTaskDialog(BuildContext context) async {
     TextEditingController descriptionController =
         TextEditingController(text: task.description);
 
-    showDialog(
+    await showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
               title: const Text("Edit Todo"),
@@ -105,11 +106,9 @@ class _TaskItemState extends State<TaskItem> {
                           id: task.id,
                           description: descriptionController.text,
                           isCompleted: task.isCompleted);
+                      task = updatedTask;
                       onUpdate(updatedTask);
-                      setState(() {
-                        onUpdate(updatedTask);
-                      });
-                      onUpdate(updatedTask);
+                      task = updatedTask;
                       Navigator.pop(context);
                     },
                     child: const Text("Update"))
