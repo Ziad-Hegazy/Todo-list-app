@@ -1,8 +1,14 @@
+import 'package:Todo_list_app/models/task.dart';
+import 'package:Todo_list_app/models/todo.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import '../styles/theme.dart';
 import '../views/todo_screen.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  Hive.registerAdapter(TodoAdapter());
+  Hive.registerAdapter(TaskAdapter());
+  await Hive.openBox<Todo>('Todo');
   runApp(const MyApp());
 }
 

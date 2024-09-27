@@ -1,3 +1,5 @@
+import 'package:Todo_list_app/controllers/todo_controller.dart';
+
 import '../extensions/date.dart';
 import '../styles/font.dart';
 import '../widgets/task_item.dart';
@@ -40,10 +42,10 @@ class _TodoItemWidgetState extends State<TodoItemWidget> {
       required this.onUpdate});
 
   String completed() {
-    if (todo.countCompleted() == todo.tasks.length) {
+    if (TodoController().countCompleted(todo) == todo.tasks.length) {
       return "Completed";
     } else {
-      return todo.countCompleted().toString() +
+      return TodoController().countCompleted(todo).toString() +
           '/' +
           todo.tasks.length.toString() +
           ' Tasks completed';
@@ -64,9 +66,10 @@ class _TodoItemWidgetState extends State<TodoItemWidget> {
             Text(
               completed(),
               style: AppTextStyles.counter.copyWith(
-                  color: todo.countCompleted() == todo.tasks.length
-                      ? Colors.greenAccent
-                      : Colors.amber),
+                  color:
+                      TodoController().countCompleted(todo) == todo.tasks.length
+                          ? Colors.greenAccent
+                          : Colors.amber),
             ),
           ],
         ),
@@ -80,15 +83,15 @@ class _TodoItemWidgetState extends State<TodoItemWidget> {
                 return TaskItem(
                   task: task,
                   onDelete: () {
-                    todo.deleteTask(task);
+                    TodoController().deleteTask(todo, task);
                     setState(() {});
                   },
                   onToggleCompleted: () {
-                    todo.toggleComplete(task);
+                    TodoController().taskToggleComplete(todo, task);
                     setState(() {});
                   },
                   onUpdate: (updatedTask) {
-                    todo.updateTask(updatedTask);
+                    TodoController().updateTask(todo, updatedTask);
                     setState(() {});
                   },
                 );

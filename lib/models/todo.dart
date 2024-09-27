@@ -1,37 +1,28 @@
-
+import 'package:hive/hive.dart';
 import 'task.dart';
+part 'todo.g.dart';
 
-class Todo {
+@HiveType(typeId: 1)
+class Todo extends HiveObject {
+  @HiveField(0)
   String id;
+
+  @HiveField(1)
   String timeString;
+
+  @HiveField(2)
   DateTime dateTime;
+
+  @HiveField(3)
   bool isCompleted;
+
+  @HiveField(4)
   List<Task> tasks = [];
 
-  Todo(
-      {required this.id,
-      required this.timeString,
-      required this.dateTime,
-      this.isCompleted = false,});
-
-  void addTask(Task task) {
-    tasks.add(task);
-  }
-  int countCompleted(){
-    return tasks.where((t) => t.isCompleted).length;
-  }
-  void updateTask(Task task) {
-    int index = tasks.indexWhere((t) => t.id == task.id);
-    if (index != -1) {
-      tasks[index] = task;
-    }
-  }
-
-  void deleteTask(Task task) {
-    tasks.removeWhere((t) => t.id == task.id);
-  }
-
-  void toggleComplete(Task task) {
-    task.isCompleted = !task.isCompleted;
-  }
+  Todo({
+    required this.id,
+    required this.timeString,
+    required this.dateTime,
+    this.isCompleted = false,
+  });
 }
