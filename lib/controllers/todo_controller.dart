@@ -1,6 +1,5 @@
 import 'package:Todo_list_app/models/task.dart';
-import 'package:hive/hive.dart';
-
+import 'package:hive_flutter/hive_flutter.dart';
 import '../extensions/date.dart';
 
 import '../models/todo.dart';
